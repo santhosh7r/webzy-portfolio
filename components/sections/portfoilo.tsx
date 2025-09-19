@@ -11,14 +11,13 @@ const images = [
   "/eco.png",
   "/webzy.png",
   // "/temp2.png",
-  "/trendyThreads.png",
+  "/temp4.png",
 ];
 
 const links = [
   "https://auradigitalservices.in/",
   "https://www.ecoplastinteriors.com/",
   "https://www.webzystudios.com/",
-  "https://trendythreads.art/"
 ]
 
 export function DeskPort() {

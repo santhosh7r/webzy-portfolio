@@ -13,11 +13,6 @@ const slides = [
     alt: "Eco Plast Logo",
   },
   { src: "/webzy.png", link: "https://www.webzystudios.com/", alt: "webzy studios" },
-  {
-    src: "/trendyThreads.png",
-    link: "https://trendythreads.art/",
-    alt: "Trendy Threads ",
-  },
 ];
 
 export function MobilePort() {

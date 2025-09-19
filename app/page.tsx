@@ -166,6 +166,7 @@ import { Footercomp } from "@/components/sections/footer";
 import { FaqComp } from "@/components/sections/faq";
 import { WhyWebzy } from "@/components/sections/whywebzy";
 import { MobilePort } from "@/components/sections/mob-port";
+import { CTADemo } from "@/components/sections/Call-to-action";
 
 export default function Home() {
   return (
@@ -205,6 +206,7 @@ export default function Home() {
               <Contact />
             </div>
             <Cta />
+            <CTADemo/>
             <Footercomp />
           </div>
         </div>
