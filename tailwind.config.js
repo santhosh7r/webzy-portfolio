@@ -1,15 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}", // or "src/**/*" depending on your project structure
+    "./app/**/*.{js,ts,jsx,tsx}", // Adjust if your project uses "src/"
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs:"480px",
+      sm: "640px", // Small devices (phones)
+      md: "768px", // Medium devices (tablets)
+      lg: "1024px", // Large devices (laptops)
+      xl: "1280px", // Extra large (desktops)
+      "2xl": "1536px", // 2X large (monitors)
+    },
     extend: {
       fontFamily: {
-
-myfont: "var(--font-myfont)",      },
+        myfont: "var(--font-myfont)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -27,5 +35,4 @@ myfont: "var(--font-myfont)",      },
     },
   },
   plugins: [],
-}
-
+};
