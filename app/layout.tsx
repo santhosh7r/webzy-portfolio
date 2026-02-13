@@ -1,5 +1,8 @@
+import { Footercomp } from "@/components/sections/footer-section";
+import NavBar from "@/components/ui/navbar";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 // Fonts
@@ -8,10 +11,21 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+export const pinyonScript = localFont({
+  src: "./fonts/PinyonScript-Regular.ttf",
+  variable: "--font-pinyon-script",
+  display: "swap",
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-}); 
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Webzy | Best Web Development & Digital Services Agency",
@@ -24,7 +38,7 @@ export const metadata: Metadata = {
     "portfolio websites",
     "business website India",
     "freelance web developer",
-    "affordable website design", 
+    "affordable website design",
   ],
   authors: [{ name: "Santhosh Perumal", url: "https://webzystudios.com" }],
   robots: {
@@ -73,9 +87,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${pinyonScript.variable} antialiased bg-black`}
       >
+        <NavBar />
         {children}
+        <Footercomp />
       </body>
     </html>
   );
