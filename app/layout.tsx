@@ -28,7 +28,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Webzy | Best Web Development & Digital Services Agency",
+  title: "Conversion-Focused Websites for Brands Globally | Webzy Studios",
   description:
     "Webzy Studios builds fast, beautiful, and conversion-focused websites for modern Indian businesses, personal brands, and startups. Get your online presence in just 7 days.",
   keywords: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     images: ["https://webzystudios.com/og-image.jpg"],
   },
   icons: {
-    icon: "/webzylogo.png",
+    icon: "/fav.png",
   },
 
   // ✅ Google Search Console Verification
