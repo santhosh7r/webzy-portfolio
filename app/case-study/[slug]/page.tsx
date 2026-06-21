@@ -12,9 +12,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!study) {
     return { title: "Case Study Not Found" };
   }
+  const url = `/case-study/${study.slug}`;
   return {
-    title: "Webzy Study", // Static title as requested
+    title: `${study.title} — Case Study`,
     description: study.description,
+    keywords: [
+      study.metadata.client,
+      ...study.metadata.services.split(",").map((s) => s.trim()),
+      "Webzy case study",
+      "web design",
+      "web development",
+    ],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${study.title} — Webzy Case Study`,
+      description: study.description,
+      url,
+      type: "article",
+      images: [{ url: study.preview, alt: `${study.title} preview` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${study.title} — Webzy Case Study`,
+      description: study.description,
+      images: [study.preview],
+    },
   };
 }
 
@@ -40,8 +64,32 @@ export default async function CaseStudyPage({ params }: Props) {
   const currentIndex = caseStudies.findIndex((s) => s.slug === slug);
   const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
+  const SITE_URL = "https://withwebzy.com";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: study.title,
+    description: study.description,
+    url: `${SITE_URL}/case-study/${study.slug}`,
+    image: `${SITE_URL}${study.preview}`,
+    dateCreated: String(study.year),
+    creator: {
+      "@type": "Organization",
+      name: "Webzy",
+      url: SITE_URL,
+    },
+    about: study.metadata.services,
+    ...(study.metadata.client && study.metadata.client !== "Confidential (Fintech Company)"
+      ? { client: study.metadata.client }
+      : {}),
+  };
+
   return (
     <main className="bg-black min-h-screen text-white pt-32 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. Top Navigation */}
       <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24">
         <Link

@@ -32,7 +32,7 @@
 // //                 <span className="inline-flex items-center justify-center rounded-full bg-[#131316] px-1.5 py-0.5 mr-2">
 // //                   🔥
 // //                 </span>
-// //                 Webzy studios welcomes you
+// //                 Webzy welcomes you
 // //               </div>
 // //             </div>
 // //           </div>
@@ -133,7 +133,7 @@
 //         <div className="flex justify-center px-4 transition-transform duration-300 -translate-y-6">
 //           <div className="text-center text-2xl xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-bold leading-tight  2xl:max-w-4xl md:max-w-2xl lg:max-w-4xl xl:max-w-4xl sm:max-w-4xl mt-4 sm:mt-8 md:mt-12 2xl:mt-16">
 //             <a>
-//               Webzy Studios builds digital legacies for next-generation, helping
+//               Webzy builds digital legacies for next-generation, helping
 //               ambitious businesses grow world wide.
 //             </a>
 //           </div>
@@ -161,7 +161,7 @@
 //         {/* Trust Badge */}
 //         <div className="text-center mb-8 md:mb-16 z-20">
 //           <h3 className="text-sm sm:text-md font-semibold">
-//             Webzy Studios is trusted by brands, startups, agencies globally
+//             Webzy is trusted by brands, startups, agencies globally
 //           </h3>
 //           <div className="flex justify-center pb-10 md:pb-20 mt-auto">
 //             <div className="w-full max-w-3xl px-6">
@@ -190,7 +190,7 @@
 // //         {/* Main Heading */}
 // //         <div className="flex flex-grow flex-col items-center justify-center px-4 text-center">
 // //           <h1 className="mt-40 max-w-4xl text-2xl font-bold leading-tight sm:mt-0 sm:text-4xl md:text-5xl lg:text-6xl">
-// //             Webzy Studios builds digital legacies for next-generation, helping
+// //             Webzy builds digital legacies for next-generation, helping
 // //             ambitious businesses grow world wide.
 // //           </h1>
 
@@ -216,7 +216,7 @@
 // //         {/* Client Logos Section */}
 // //         <div className="w-full text-center">
 // //           <h3 className="text-sm font-semibold sm:text-base">
-// //             Webzy Studios is trusted by brands, startups, agencies globally
+// //             Webzy is trusted by brands, startups, agencies globally
 // //           </h3>
 // //           <div className="mt-auto flex justify-center pb-10 md:pb-20">
 // //             <div className="w-full max-w-3xl px-6 pt-4">
@@ -271,7 +271,7 @@ From conversion-focused websites to scalable SaaS platforms, we build smart tech
           {/* Trust Section - Reduced Gap */}
           <div className="mt-6 mb-12">
             <h3 className="text-sm sm:text-lg font-semibold mb-6 text-neutral-400">
-              Webzy Studios is trusted by brands globally
+              Webzy is trusted by brands globally
             </h3>
 
             <div className="w-full">

@@ -5,7 +5,7 @@ function Footercomp() {
   return (
     <div className="w-full relative">
       <Footer
-        brandName="webzy studio"
+        brandName="Webzy"
         navLinks={[
           { href: "/case-study", label: "Case Studies" },
           {
@@ -16,7 +16,7 @@ function Footercomp() {
         socialLinks={[
           {
             icon: <Instagram className="h-5 w-5 text-[#4b8aef]" />,
-            href: "https://www.instagram.com/webzystudios?igsh=YnUzNTNiZWpnajVs&utm_source=qr",
+            href: "https://www.instagram.com/withwebzy",
             label: "Instagram",
           },
           {
@@ -26,7 +26,7 @@ function Footercomp() {
           },
         ]}
         copyright={{
-          text: "© 2025 Webzy Studios",
+          text: "© 2026 Webzy",
           license: "All rights reserved",
         }}
       />

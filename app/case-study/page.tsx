@@ -3,8 +3,27 @@ import { CaseStudyCard } from "@/components/ui/case-study-card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work | Webzy",
-  description: "Case studies and selected projects.",
+  title: "Case Studies & Selected Work",
+  description:
+    "Explore Webzy's case studies — conversion-focused landing pages, ecommerce builds, website redesigns, and custom CRM software crafted for brands and startups.",
+  keywords: [
+    "Webzy case studies",
+    "web design portfolio",
+    "web development projects",
+    "ecommerce website examples",
+    "landing page design",
+    "CRM software development",
+  ],
+  alternates: {
+    canonical: "/case-study",
+  },
+  openGraph: {
+    title: "Case Studies & Selected Work | Webzy",
+    description:
+      "Explore Webzy's case studies — conversion-focused landing pages, ecommerce builds, website redesigns, and custom CRM software.",
+    url: "/case-study",
+    type: "website",
+  },
 };
 
 export default function CaseStudyIndex() {

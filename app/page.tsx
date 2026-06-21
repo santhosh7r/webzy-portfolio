@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/hero-section";
-import Head from "next/head";
 
 import TestimonialsSection from "@/components/sections/testimonials-section";
 // import FounderSection from "@/components/sections/behind";
@@ -58,14 +57,6 @@ import Services from "@/components/sections/services-section";
 export default function Home() {
   return (
     <>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="TSyix6K7GzXw9h76jf6eKx0P5LbcFzM_il3_1Cdc_EM"
-        />
-        <title>The Webzy</title>
-      </Head>
-
       {/* PAGE ROOT */}
       <main className="bg-black text-white overflow-x-hidden">
         {/* HERO SECTION */}

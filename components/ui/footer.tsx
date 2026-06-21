@@ -461,10 +461,10 @@ export function Footer({
                    </div>
                  </a>
                  <a 
-                   href="mailto:hello@webzystudio.com"
+                   href="mailto:contact@withwebzy.com"
                    className="px-8 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-white/80"
                  >
-                   contact@webzystudio.com
+                   contact@withwebzy.com
                  </a>
               </div>
             </div>
@@ -534,7 +534,7 @@ export function Footer({
         {/* MASSIVE BRAND WATERMARK */}
         <div className="hidden md:block w-full overflow-hidden select-none pointer-events-none opacity-[0.03]">
            <h1 className="text-[18vw] font-bold leading-[0.75] text-center tracking-tighter text-white translate-y-[10%]">
-             WEBZY STUDIO
+             WEBZY
            </h1>
         </div>
 
