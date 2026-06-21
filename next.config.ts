@@ -1,9 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Native Next.js deployment on Vercel (no static export).
+  // Vercel handles image optimization, dynamic routes, and caching automatically.
   images: {
-    unoptimized: true, // ✅ disables image optimization for static export
+    formats: ["image/avif", "image/webp"],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
