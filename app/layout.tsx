@@ -3,7 +3,10 @@ import NavBar from "@/components/ui/navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-RV2WD39ZNH";
 
 // Fonts
 const geistSans = Geist({
@@ -121,9 +124,11 @@ export default function RootLayout({
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: SITE_NAME,
+        alternateName: ["Webzy Agency", "Webzy Web Design", "withwebzy"],
         url: SITE_URL,
         logo: `${SITE_URL}/logo.png`,
         image: `${SITE_URL}/webzy.png`,
+        slogan: "Conversion-Focused Web Design & Development",
         description:
           "Webzy designs and builds fast, beautiful, conversion-focused websites for startups, personal brands, and growing businesses worldwide.",
         email: "contact@withwebzy.com",
@@ -142,6 +147,7 @@ export default function RootLayout({
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
         name: SITE_NAME,
+        alternateName: "Webzy Agency",
         publisher: { "@id": `${SITE_URL}/#organization` },
         inLanguage: "en",
       },
@@ -175,6 +181,21 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+
         <NavBar />
         {children}
         <Footercomp />

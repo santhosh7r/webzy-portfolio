@@ -244,7 +244,7 @@ export default function Hero() {
             {/* LEFT: Heading */}
             <div className="lg:col-span-12">
               <h1 className="text-left text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-5xl">
-                Helping{" "} ambitious businesses scale globally with high-performance digital products.
+                <span className="text-[#0199ff]">Webzy</span> helps ambitious businesses scale globally with high-performance digital products.
                 {/* <span className="font-pinyon-script whitespace-nowrap text-white">
                  {" "}
                 </span>{" "} */}
