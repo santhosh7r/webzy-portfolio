@@ -131,7 +131,7 @@ export default function RootLayout({
         slogan: "Conversion-Focused Web Design & Development",
         description:
           "Webzy designs and builds fast, beautiful, conversion-focused websites for startups, personal brands, and growing businesses worldwide.",
-        email: "contact@withwebzy.com",
+        email: "contact@webzyinc.com",
         founder: {
           "@type": "Person",
           name: "Santhosh Perumal",

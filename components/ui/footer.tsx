@@ -461,10 +461,10 @@ export function Footer({
                    </div>
                  </a>
                  <a 
-                   href="mailto:contact@withwebzy.com"
+                   href="mailto:contact@webzyinc.com"
                    className="px-8 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-white/80"
                  >
-                   contact@withwebzy.com
+                   contact@webzyinc.com
                  </a>
               </div>
             </div>
