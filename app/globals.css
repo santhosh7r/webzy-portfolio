@@ -1,222 +1,299 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* ============================================================
+   WEBZY — DESIGN SYSTEM
+   Black is the ground. Blue is a signal, never a wash.
+   Depth comes from tone, hairlines and light — not from boxes.
+   ============================================================ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+@theme {
+  /* --- Ground. Four steps of near-black. Enough to build depth,
+         few enough that the site never reads as grey. --- */
+  --color-void: #000000;
+  --color-s1: #050505;
+  --color-s2: #080808;
+  --color-s3: #0b0b0b;
+  --color-s4: #101010;
 
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
+  /* --- Ink --- */
+  --color-ink: #f5f5f5;
+  --color-ink-2: #a1a1a1;
+  --color-ink-3: #6b6b6b;
+  --color-ink-4: #3d3d3d;
 
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-}
+  /* --- Structure --- */
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-line-2: rgba(255, 255, 255, 0.14);
+  --color-line-3: rgba(255, 255, 255, 0.22);
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* --- Signal --- */
+  --color-accent: #0199ff;
+  --color-accent-2: #4db8ff;
+  --color-accent-dim: rgba(1, 153, 255, 0.16);
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-line);
   }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    background: var(--color-void);
+    color-scheme: dark;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
-}
-/* Hide scrollbar but allow scrolling */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
-
-/* Font faces are now handled by next/font in layout.tsx */
-
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
   }
-  100% {
-    transform: translateX(-50%);
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
+@layer components {
+  /* ---------- Measure ----------
+     Three widths. Everything on the site sits in one of them. */
+  .shell {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4.5vw, 2.75rem);
+  }
+
+  .shell-wide {
+    width: 100%;
+    max-width: 1560px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4.5vw, 2.75rem);
+  }
+
+  .shell-narrow {
+    width: 100%;
+    max-width: 820px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4.5vw, 2.75rem);
+  }
+
+  /* ---------- Type ----------
+     One ramp. Tight tracking at scale, open tracking at label size.
+     Weights stay low — 400/500 — because mass comes from size, not bold. */
+  /* Sized so the longest hero line holds on one line from 1024px up. */
+  .t-hero {
+    font-size: clamp(2.6rem, 6.3vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 500;
+  }
+
+  .t-display {
+    font-size: clamp(2.25rem, 5.2vw, 4.25rem);
+    line-height: 1;
+    letter-spacing: -0.042em;
+    font-weight: 500;
+  }
+
+  .t-section {
+    font-size: clamp(1.85rem, 3.4vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.038em;
+    font-weight: 500;
+  }
+
+  .t-title {
+    font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+    line-height: 1.24;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+  }
+
+  .t-lede {
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    line-height: 1.5;
+    letter-spacing: -0.018em;
+    font-weight: 400;
+    color: var(--color-ink-2);
+  }
+
+  .t-body {
+    font-size: 1.0313rem;
+    line-height: 1.62;
+    letter-spacing: -0.012em;
+    color: var(--color-ink-2);
+  }
+
+  .t-small {
+    font-size: 0.9063rem;
+    line-height: 1.58;
+    letter-spacing: -0.008em;
+    color: var(--color-ink-2);
+  }
+
+  /* Machine voice: labels, specs, status, indices. */
+  .t-mono {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .t-mono-sm {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  /* ---------- Light ----------
+     A single soft source. Used at most once per screen. */
+  .glow-accent {
+    background: radial-gradient(
+      55% 55% at 50% 50%,
+      rgba(1, 153, 255, 0.16) 0%,
+      rgba(1, 153, 255, 0.05) 42%,
+      transparent 72%
+    );
+  }
+
+  .glow-edge {
+    background: radial-gradient(
+      120% 70% at 50% 0%,
+      rgba(1, 153, 255, 0.09) 0%,
+      transparent 62%
+    );
+  }
+
+  /* A hairline that fades at both ends. Reads as engineered, not drawn. */
+  .rule-fade {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.14) 12%,
+      rgba(255, 255, 255, 0.14) 88%,
+      transparent
+    );
+  }
+
+  /* ---------- Texture ----------
+     Grain stops large black fields reading as dead vector. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Structural grid. The site's underlying coordinate system, made visible. */
+  .grid-cols-lines {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    );
+    background-size: 12.5% 100%;
+  }
+
+  .grid-mesh {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* ---------- Surfaces ----------
+     Panels are defined by their edge, not by a fill. */
+  .panel {
+    background: var(--color-s2);
+    border: 1px solid var(--color-line);
+  }
+
+  .panel-glass {
+    background: rgba(255, 255, 255, 0.022);
+    border: 1px solid var(--color-line);
+    backdrop-filter: blur(18px) saturate(140%);
+  }
 }
 
-.pause-on-hover:hover {
-  animation-play-state: paused;
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mask-b {
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+
+  .mask-r {
+    mask-image: linear-gradient(to right, #000 78%, transparent 100%);
+  }
+
+  /* Signals "there is more to the right" on narrow screens only, where the
+     strip actually overflows. Above md it fits and the fade would be noise. */
+  .fade-r-sm {
+    mask-image: linear-gradient(to right, #000 82%, transparent 100%);
+  }
+  @media (min-width: 768px) {
+    .fade-r-sm {
+      mask-image: none;
+    }
+  }
+
+  .balance {
+    text-wrap: balance;
+  }
+
+  .pretty {
+    text-wrap: pretty;
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+

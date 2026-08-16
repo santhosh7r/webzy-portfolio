@@ -1,87 +1,30 @@
-import Hero from "@/components/sections/hero-section";
+import { Closing } from "@/components/home/closing";
+import { Domains } from "@/components/home/domains";
+import { Hero } from "@/components/home/hero";
+import { Principles } from "@/components/home/principles";
+import { Products } from "@/components/home/products";
+import { Research } from "@/components/home/research";
+import { Signals } from "@/components/home/signals";
+import { Standard } from "@/components/home/standard";
+import { Thesis } from "@/components/home/thesis";
 
-import TestimonialsSection from "@/components/sections/testimonials-section";
-// import FounderSection from "@/components/sections/behind";
-import Contact from "@/components/sections/contact-section";
-import { Cta } from "@/components/sections/cta-section";
-import { FaqComp } from "@/components/sections/faq-section";
-import ManBehind from "@/components/sections/founder-section";
-import { PricingBasic } from "@/components/sections/pricing-section";
-import Services from "@/components/sections/services-section";
-// export default function Home() {
-//   return (
-//     <>
-//       {/* ✅ Google Site Verification */}
-//       <Head>
-//         <meta
-//           name="google-site-verification"
-//           content="TSyix6K7GzXw9h76jf6eKx0P5LbcFzM_il3_1Cdc_EM"
-//         />
-//       </Head>
-//       {/* ✅ PAGE SECTIONS */}
-//       <div className="bg-black">
-//         <div className="flex flex-col">
-//           <Hero />
-//         </div>
-//         <ThreeDMarqueeDemo />
-//         {/* MAIN CONTAINER (Blocks 2 sides) */}
-//         {/* <div className="max-w-6xl mx-auto px-4 md:px-8"> */}
-//         {/* <div className="bg-black flex flex-col overflow-hidden">
-//           <WhyWebzy /> */}
-
-//         {/* <div id="services">
-//             <PricingBasic />
-//           </div> */}
-
-//         {/* <div className="max-w-6xl mx-auto">//testimonials</div> */}
-
-//         {/* <FaqComp /> */}
-//         {/*
-//         <div id="contact">
-//           <Contact />
-//         </div> */}
-
-//         {/* {/* <Cta />
-//         <Footercomp /> */}
-//       </div>
-//       {/* </div> */}
-//     </>
-//   );
-// }
-
-// import Head from "next/head";
-
-// import Hero from "@/components/sections/hero";
-// import { ThreeDMarqueeDemo } from "@/components/sections/demoport";
-
+/**
+ * The page argues in order: what we are → why it matters → what we work on →
+ * what we hold the work to → what is being built → what is still open →
+ * how we decide → what is happening now → what we are for.
+ */
 export default function Home() {
   return (
     <>
-      {/* PAGE ROOT */}
-      <main className="bg-black text-white overflow-x-hidden">
-        {/* HERO SECTION */}
-        <Hero />
-        
-        {/* SERVICES SECTION */}
-        <Services />
-        
-        {/* FOUNDER SECTION */}
-        <ManBehind />
-        
-        {/* PRICING PLANS */}
-        <PricingBasic />
-        
-        <Cta />
-        
-        {/* TESTIMONIALS */}
-        <TestimonialsSection />
-
-
-
-        <Contact/>
-                         <FaqComp />
-
-      </main>
+      <Hero />
+      <Thesis />
+      <Domains />
+      <Standard />
+      <Products />
+      <Research />
+      <Principles />
+      <Signals />
+      <Closing />
     </>
   );
 }

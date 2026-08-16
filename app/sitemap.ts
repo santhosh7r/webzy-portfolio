@@ -1,29 +1,28 @@
-import { caseStudies } from "@/app/lib/case-studies";
+import { site } from "@/lib/site";
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://withwebzy.com";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: SITE_URL,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/case-study`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  const routes: {
+    path: string;
+    priority: number;
+    freq: "weekly" | "monthly" | "yearly";
+  }[] = [
+    { path: "", priority: 1, freq: "weekly" },
+    { path: "/technology", priority: 0.9, freq: "monthly" },
+    { path: "/products", priority: 0.9, freq: "monthly" },
+    { path: "/research", priority: 0.8, freq: "monthly" },
+    { path: "/company", priority: 0.8, freq: "monthly" },
+    { path: "/journal", priority: 0.6, freq: "weekly" },
+    { path: "/contact", priority: 0.7, freq: "monthly" },
+    { path: "/privacy", priority: 0.2, freq: "yearly" },
+    { path: "/terms", priority: 0.2, freq: "yearly" },
   ];
 
-  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((study) => ({
-    url: `${SITE_URL}/case-study/${study.slug}`,
-    changeFrequency: "yearly",
-    priority: 0.7,
+  return routes.map((r) => ({
+    url: `${site.url}${r.path}`,
+    changeFrequency: r.freq,
+    priority: r.priority,
   }));
-
-  return [...staticRoutes, ...caseStudyRoutes];
 }
